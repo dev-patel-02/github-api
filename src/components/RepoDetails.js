@@ -3,10 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import universe from "../assets/images/milky-way.png";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
-function RepoDetails({ githubUser }) {
+function RepoDetails({ user }) {
   const { id } = useParams();
   const ids = parseFloat(id);
-  const repositories = githubUser.repos_url;
+  const repositories = user.repos_url;
   const [repos, setRepos] = useState([]);
   useEffect(() => {
     fetch(`${repositories}`)
@@ -28,42 +28,42 @@ function RepoDetails({ githubUser }) {
             />
             <div className="avatar absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="w-32 rounded-full ring ring-red-500 ring-offset-base-100 ring-offset-2">
-                <img src={githubUser.avatar_url} />
+                <img src={user.avatar_url} />
               </div>
             </div>
             <div className="flex justify-center">
               <p className="absolute bottom-14 px-2 text-2xl py-1 text-white font-bold">
-                {githubUser.name}
+                {user.name}
               </p>
               <p className="absolute bottom-10 px-2 text-sm py-1 text-gray-200 font-bold">
-                @{githubUser.login}
+                @{user.login}
               </p>
               <p className="absolute bottom-6 px-2 text-sm py-1 text-gray-200 font-bold">
                 <span className="flex justify-center items-center">
                   <HiOutlineLocationMarker className="mr-1" />{" "}
-                  {githubUser.location}
+                  {user.location}
                 </span>
               </p>
               <p className="absolute bottom-0 text-xs px-4 text-center pb-4 pt-6 text-gray-300">
-                {githubUser.bio}
+                {user.bio}
               </p>
             </div>
           </div>
           <div className="flex justify-center px-4 py-4">
             <div className="flex flex-col items-center justify-center ml-2">
-              <p className="text-xl font-bold">{githubUser.public_repos}</p>
+              <p className="text-xl font-bold">{user.public_repos}</p>
               <p className="text-sm font-medium text-gray-400">repositories</p>
             </div>
             <div className="flex flex-col items-center justify-center mx-5">
-              <p className="text-xl font-bold">{githubUser.public_gists}</p>
+              <p className="text-xl font-bold">{user.public_gists}</p>
               <p className="text-sm font-medium text-gray-400">gist</p>
             </div>
             <div className="flex flex-col items-center justify-center mx-5">
-              <p className="text-xl font-bold">{githubUser.followers}</p>
+              <p className="text-xl font-bold">{user.followers}</p>
               <p className="text-sm font-medium text-gray-400">followers</p>
             </div>
             <div className="flex flex-col items-center justify-center mr-2">
-              <p className="text-xl font-bold">{githubUser.following}</p>
+              <p className="text-xl font-bold">{user.following}</p>
               <p className="text-sm font-medium text-gray-400">following</p>
             </div>
           </div>

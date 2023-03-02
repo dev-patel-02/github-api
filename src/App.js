@@ -5,21 +5,20 @@ import Home from "./pages/Home";
 import RepoDetails from "./components/RepoDetails";
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState([]);
   useEffect(() => {
     fetch("https://api.github.com/users/brynary")
       .then((res) => res.json())
-      .then((data) => setUsers(data));
+      .then((data) => setUser(data));
   }, []);
-  localStorage.setItem("users", JSON.stringify(users));
-  const githubUser = JSON.parse(localStorage.getItem("users"));
+  
   return (
     <div className="px-2">
       <Routes>
-        <Route path="/" element={<Home githubUser={githubUser} />} />
+        <Route path="/" element={<Home user={user} />} />
         <Route
           path="/repo/:id"
-          element={<RepoDetails githubUser={githubUser} />}
+          element={<RepoDetails user={user} />}
         />
       </Routes>
     </div>
