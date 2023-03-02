@@ -94,7 +94,7 @@ function UserCard({ user }) {
               return value;
             }
           })
-          .map((repo, i) => (
+          ?.map((repo, i) => (
             <button
               key={i}
               onClick={() => handleDetails(repo?.id)}
