@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import RepoDetails from "./components/RepoDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -11,15 +12,13 @@ function App() {
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, []);
-  
+
   return (
-    <div className="px-2">
+    <div className="overflow-hidden px-2">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home user={user} />} />
-        <Route
-          path="/repo/:id"
-          element={<RepoDetails user={user} />}
-        />
+        <Route path="/repo/:id" element={<RepoDetails user={user} />} />
       </Routes>
     </div>
   );

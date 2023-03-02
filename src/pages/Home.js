@@ -1,10 +1,10 @@
 import React from "react";
 import UserCard from "../components/UserCard";
 
-function Home({user}) {
+function Home({ user }) {
   return (
-    <div className="container mx-auto py-10 px-4">
-      <div className="grid justify-center items-center w-full min-h-screen">
+    <div className="container flex justify-center mx-auto py-10 md:px-4 w-100">
+      <div className="md:w-2/3 min-h-screen">
         <UserCard user={user} />
       </div>
     </div>
