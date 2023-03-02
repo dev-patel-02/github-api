@@ -13,7 +13,8 @@ function UserCard({ user }) {
     fetch(`${repositories}`)
       .then((res) => res.json())
       .then((data) => setRepos(data));
-  }, []);
+  }, [user]);
+
   const handleDetails = (id) => {
     navigate(`/repo/${id}`);
   };
@@ -21,10 +22,10 @@ function UserCard({ user }) {
   return (
     <div className="bg-white rounded-3xl shadow-xl p-1">
       <div className="relative">
-        <img className="rounded-xl h-80 min-w-full" src={banner} alt="code" />
+        <img className="rounded-xl h-80 min-w-full" src={banner} alt="banner" />
         <div className="avatar absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-32 rounded-full ring ring-red-500 ring-offset-base-100 ring-offset-2">
-            <img src={user.avatar_url} />
+            <img src={user.avatar_url} alt="avatar" />
           </div>
         </div>
         <div className="flex justify-center">
@@ -84,9 +85,8 @@ function UserCard({ user }) {
       </div>
       <p className="font-bold text-md text-center py-5">All Repositories</p>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-5 md:px-5 py-5">
-        {repos
-          ?.filter((value) => {
-            if (searchRepo == "") {
+        {repos?.filter((value) => {
+            if (searchRepo === "") {
               return value;
             } else if (
               value.name.toLowerCase().includes(searchRepo.toLocaleLowerCase())
@@ -100,7 +100,8 @@ function UserCard({ user }) {
               onClick={() => handleDetails(repo?.id)}
               className="border-2 rounded-lg px-4 py-2 text-center font-bold my-1 shadow-md"
             >
-              {repo?.name.charAt(0).toUpperCase() + repo?.name.slice(1).replaceAll('_', ' ').replaceAll('-', ' ')}
+              {repo?.name.charAt(0).toUpperCase() +
+                repo?.name.slice(1).replaceAll("_", " ").replaceAll("-", " ")}
             </button>
           ))}
       </div>
