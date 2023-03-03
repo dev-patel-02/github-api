@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import banner from "../assets/images/banner.png";
+import banner from "../assets/images/banner.jpg";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -22,25 +22,25 @@ function UserCard({ user }) {
   return (
     <div className="bg-white rounded-3xl shadow-xl p-1">
       <div className="relative">
-        <img className="rounded-xl h-80 min-w-full" src={banner} alt="banner" />
-        <div className="avatar absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <img className="rounded-xl h-[300px] w-[824px]" src={banner} alt="banner" />
+        <div className="avatar absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-32 rounded-full ring ring-red-500 ring-offset-base-100 ring-offset-2">
             <img src={user.avatar_url} alt="avatar" />
           </div>
         </div>
         <div className="flex justify-center">
-          <p className="absolute bottom-14 px-2 text-2xl mb-1 text-white font-bold">
+          <p className="absolute bottom-20 px-2 text-2xl mb-1 text-white font-bold">
             {user.name}
           </p>
-          <p className="absolute bottom-10 px-2 text-sm mb-1 text-gray-200 font-bold">
+          <p className="absolute bottom-14 px-2 text-sm mb-1 text-gray-200 font-bold">
             @{user.login}
           </p>
-          <p className="absolute bottom-4 px-2 mb-1 text-sm text-gray-200 font-bold">
+          <p className="absolute bottom-8 px-2 mb-1 text-sm text-gray-200 font-bold">
             <span className="flex justify-center items-center">
               <HiOutlineLocationMarker className="mr-1" /> {user.location}
             </span>
           </p>
-          <p className="absolute bottom-0 text-xs px-4 text-center mb-1 text-gray-300">
+          <p className="absolute bottom-3 text-xs px-4 text-center mb-1 text-gray-300">
             {user.bio}
           </p>
         </div>
