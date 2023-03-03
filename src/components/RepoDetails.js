@@ -10,7 +10,6 @@ function RepoDetails({ user }) {
     fetch(`https://api.github.com/repositories/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setRepos(data);
       });
   }, []);

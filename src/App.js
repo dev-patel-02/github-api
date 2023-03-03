@@ -9,8 +9,12 @@ function App() {
   const [user, setUser] = useState([]);
   useEffect(() => {
     fetch("https://api.github.com/users/brynary")
+    
       .then((res) => res.json())
-      .then((data) => setUser(data));
+      .then((data) => {
+        console.log(data);
+        setUser(data);
+      });
   }, []);
 
   return (
