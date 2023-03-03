@@ -32,15 +32,15 @@ function UserCard({ user }) {
           <p className="absolute bottom-20 px-2 text-2xl mb-1 text-white font-bold">
             {user.name}
           </p>
-          <p className="absolute bottom-14 px-2 text-sm mb-1 text-gray-200 font-bold">
+          <p className="absolute bottom-14 px-2 text-sm mb-1 text-gray-100 font-bold">
             @{user.login}
           </p>
-          <p className="absolute bottom-8 px-2 mb-1 text-sm text-gray-200 font-bold">
+          <p className="absolute bottom-8 px-2 mb-1 text-sm text-gray-100 font-bold">
             <span className="flex justify-center items-center">
               <HiOutlineLocationMarker className="mr-1" /> {user.location}
             </span>
           </p>
-          <p className="absolute bottom-3 text-xs px-4 text-center mb-1 text-gray-300">
+          <p className="absolute bottom-2 text-sm px-4 text-center mb-1 text-gray-100">
             {user.bio}
           </p>
         </div>
@@ -52,11 +52,11 @@ function UserCard({ user }) {
           className="flex flex-col items-center justify-center ml-2"
         >
           <p className="text-xl font-bold">{user.public_repos}</p>
-          <p className="text-sm font-medium text-gray-400">repositories</p>
+          <p className="text-sm font-medium text-gray-600">repositories</p>
         </Link>
         <div className="flex flex-col items-center justify-center mx-5">
           <p className="text-xl font-bold">{user.public_gists}</p>
-          <p className="text-sm font-medium text-gray-400">gist</p>
+          <p className="text-sm font-medium text-gray-600">gist</p>
         </div>
         <Link
           to="https://github.com/brynary"
@@ -64,7 +64,7 @@ function UserCard({ user }) {
           className="flex flex-col items-center justify-center mx-5"
         >
           <p className="text-xl font-bold">{user.followers}</p>
-          <p className="text-sm font-medium text-gray-400">followers</p>
+          <p className="text-sm font-medium text-gray-600">followers</p>
         </Link>
         <Link
           to="https://github.com/brynary"
@@ -72,7 +72,7 @@ function UserCard({ user }) {
           className="flex flex-col items-center justify-center mr-2"
         >
           <p className="text-xl font-bold">{user.following}</p>
-          <p className="text-sm font-medium text-gray-400">following</p>
+          <p className="text-sm font-medium text-gray-600">following</p>
         </Link>
       </div>
       <div className="pb-8 mt-2 flex justify-center">
