@@ -46,35 +46,35 @@ function RepoDetails({ user }) {
         </div>
           </div>
           <div className="flex justify-center px-4 py-4">
-            <Link
-              to="https://github.com/brynary?tab=repositories"
-              target="_blank"
-              className="flex flex-col items-center justify-center ml-2"
-            >
-              <p className="text-xl font-bold">{user.public_repos}</p>
-              <p className="text-sm font-medium text-gray-400">repositories</p>
-            </Link>
-            <div className="flex flex-col items-center justify-center mx-5">
-              <p className="text-xl font-bold">{user.public_gists}</p>
-              <p className="text-sm font-medium text-gray-400">gist</p>
-            </div>
-            <Link
-              to="https://github.com/brynary"
-              target="_blank"
-              className="flex flex-col items-center justify-center mx-5"
-            >
-              <p className="text-xl font-bold">{user.followers}</p>
-              <p className="text-sm font-medium text-gray-400">followers</p>
-            </Link>
-            <Link
-              to="https://github.com/brynary"
-              target="_blank"
-              className="flex flex-col items-center justify-center mr-2"
-            >
-              <p className="text-xl font-bold">{user.following}</p>
-              <p className="text-sm font-medium text-gray-400">following</p>
-            </Link>
-          </div>
+        <Link
+          to="https://github.com/brynary?tab=repositories"
+          target="_blank"
+          className="flex flex-col items-center justify-center ml-2"
+        >
+          <p className="text-xl font-bold">{user.public_repos}</p>
+          <p className="text-sm font-medium text-gray-600">repositories</p>
+        </Link>
+        <div className="flex flex-col items-center justify-center mx-5">
+          <p className="text-xl font-bold">{user.public_gists}</p>
+          <p className="text-sm font-medium text-gray-600">gist</p>
+        </div>
+        <Link
+          to="https://github.com/brynary"
+          target="_blank"
+          className="flex flex-col items-center justify-center mx-5"
+        >
+          <p className="text-xl font-bold">{user.followers}</p>
+          <p className="text-sm font-medium text-gray-600">followers</p>
+        </Link>
+        <Link
+          to="https://github.com/brynary"
+          target="_blank"
+          className="flex flex-col items-center justify-center mr-2"
+        >
+          <p className="text-xl font-bold">{user.following}</p>
+          <p className="text-sm font-medium text-gray-600">following</p>
+        </Link>
+      </div>
           <div className="px-4">
             <p className="font-bold text-2xl text-start py-3">
               Repo Name : {repos?.full_name}
