@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import banner from "../assets/images/banner.jpg";
+import banner from "../assets/images/banner.png";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -7,13 +7,12 @@ function UserCard({ user }) {
   const [repos, setRepos] = useState([]);
   const [searchRepo, setSearchRepo] = useState("");
   const navigate = useNavigate();
-  const repositories = user?.repos_url;
-
+  const url = user?.repos_url;
   useEffect(() => {
-    fetch(`${repositories}`)
+    fetch(`${url}`)
       .then((res) => res.json())
       .then((data) => setRepos(data));
-  }, [user]);
+  }, [user,url]);
 
   const handleDetails = (id) => {
     navigate(`/repo/${id}`);
@@ -22,25 +21,25 @@ function UserCard({ user }) {
   return (
     <div className="bg-white rounded-3xl shadow-xl p-1">
       <div className="relative">
-        <img className="rounded-xl h-[300px] w-[824px]" src={banner} alt="banner" />
+        <img className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[824px]" src={banner} alt="banner" />
         <div className="avatar absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-32 rounded-full ring ring-red-500 ring-offset-base-100 ring-offset-2">
             <img src={user.avatar_url} alt="avatar" />
           </div>
         </div>
         <div className="flex justify-center">
-          <p className="absolute bottom-20 px-2 text-2xl mb-1 text-white font-bold">
+          <p className="absolute bottom-14 md:bottom-20 px-2 text-2xl mb-1 text-white font-bold">
             {user.name}
           </p>
-          <p className="absolute bottom-14 px-2 text-sm mb-1 text-gray-100 font-bold">
+          <p className="absolute bottom-11 md:bottom-14 px-2 text-sm mb-1 text-gray-100 font-bold">
             @{user.login}
           </p>
-          <p className="absolute bottom-8 px-2 mb-1 text-sm text-gray-100 font-bold">
+          <p className="absolute bottom-6 md:bottom-8 px-2 mb-1 text-sm text-gray-100 font-bold">
             <span className="flex justify-center items-center">
               <HiOutlineLocationMarker className="mr-1" /> {user.location}
             </span>
           </p>
-          <p className="absolute bottom-2 text-sm px-4 text-center mb-1 text-gray-100">
+          <p className="absolute bottom-1 md:bottom-2 text-sm px-4 text-center mb-1 text-gray-100">
             {user.bio}
           </p>
         </div>
@@ -83,7 +82,7 @@ function UserCard({ user }) {
           onChange={(e) => setSearchRepo(e.target.value)}
         />
       </div>
-      <p className="font-bold text-md text-center py-5">All Repositories</p>
+      <h1 className="font-bold text-md text-center py-5">All Repositories</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-5 md:px-5 py-5">
         {repos?.filter((value) => {
             if (searchRepo === "") {
