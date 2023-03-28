@@ -8,6 +8,7 @@ function UserCard({ user }) {
   const [searchRepo, setSearchRepo] = useState("");
   const navigate = useNavigate();
   const url = user?.repos_url;
+  console.log(url)
   useEffect(() => {
     fetch(`${url}`)
       .then((res) => res.json())
