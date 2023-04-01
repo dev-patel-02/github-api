@@ -8,4 +8,4 @@ Use Package :
 
 ## Demo
 
-https://github-api-dev220791-gmailcom.vercel.app
+https://github-gallery.vercel.app

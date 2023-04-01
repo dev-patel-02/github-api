@@ -18,7 +18,7 @@ function UserCard({ user }) {
   const handleDetails = (id) => {
     navigate(`/repo/${id}`);
   };
-
+//new
   return (
     <div className="bg-white rounded-3xl shadow-xl p-1">
       <div className="relative">
