@@ -20,7 +20,7 @@ function RepoDetails({ user }) {
         <div className="bg-white rounded-3xl p-4 shadow-xl md:w-2/3">
           <div className="relative">
             <img
-              className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[824px]"
+              className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[1000px]"
               src={banner}
               alt="banner"
             />

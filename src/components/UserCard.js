@@ -22,7 +22,7 @@ function UserCard({ user }) {
   return (
     <div className="bg-white rounded-3xl shadow-xl p-1">
       <div className="relative">
-        <img className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[824px]" src={banner} alt="banner" />
+        <img className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[1024px]" src={banner} alt="banner" />
         <div className="avatar absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-32 rounded-full ring ring-red-500 ring-offset-base-100 ring-offset-2">
             <img src={user.avatar_url} alt="avatar" />
